@@ -64,24 +64,24 @@ class SetElementsActivity : AppCompatActivity() {
 
         btnAccept.setOnClickListener {
             val intent:Intent = Intent(this, InGameActivity::class.java)
-            val replyIntent = Intent()
+            //val replyIntent = Intent()
             startActivity(intent)
             if(TextUtils.isEmpty(editTeam1.text)|| TextUtils.isEmpty(editTeam2.text)||TextUtils.isEmpty(editEstadio.text)||TextUtils.isEmpty(editReferee.text)){
-                setResult(Activity.RESULT_CANCELED,replyIntent)
+                setResult(Activity.RESULT_CANCELED,intent)
             } else{
                 val equipo1 = editTeam1.text.toString()
-                replyIntent.putExtra(EXTRA_REPLY,equipo1)
+                intent.putExtra(EXTRA_REPLY,equipo1)
 
                 val equipo2 = editTeam2.text.toString()
-                replyIntent.putExtra(EXTRA_REPLY,equipo2)
+                intent.putExtra(EXTRA_REPLY,equipo2)
 
                 val estadio = editEstadio.text.toString()
-                replyIntent.putExtra(EXTRA_REPLY,estadio)
+                intent.putExtra(EXTRA_REPLY,estadio)
 
                 val referee = editReferee.text.toString()
-                replyIntent.putExtra(EXTRA_REPLY,referee)
+                intent.putExtra(EXTRA_REPLY,referee)
 
-                setResult(Activity.RESULT_OK,replyIntent)
+                setResult(Activity.RESULT_OK,intent)
             }
             finish()
         }
