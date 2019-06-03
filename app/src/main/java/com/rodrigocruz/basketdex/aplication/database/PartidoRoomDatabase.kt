@@ -8,9 +8,11 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import com.rodrigocruz.basketdex.aplication.database.dao.PartidoDao
 import com.rodrigocruz.basketdex.aplication.database.entities.Partido
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
-@Database(entities = [Partido::class],version = 1)
-public abstract class PartidoRoomDatabase : RoomDatabase(){
+@Database(entities = [Partido::class],version = 2)
+abstract class PartidoRoomDatabase : RoomDatabase(){
 
     abstract fun partidodao():PartidoDao
 
@@ -40,11 +42,19 @@ public abstract class PartidoRoomDatabase : RoomDatabase(){
         private class PartidoDatabaseCallback(private val scope: CoroutineScope) : RoomDatabase.Callback(){
             override fun onOpen(db : SupportSQLiteDatabase){
                 super.onOpen(db)
+
+                INSTANCE?.let{database->
+                    scope.launch(Dispatchers.IO){
+                        populateDatabase(database.partidodao())
+                    }
+
+                }
             }
         }
 
         suspend fun populateDatabase(partidoDao: PartidoDao){
-
+            val defaultMatch = Partido(1,"UCA","UES","03/06/2019","7:00","Polideportivo UCA","Juan Pérez",123,45)
+            partidoDao.insert(defaultMatch)
         }
     }
 }

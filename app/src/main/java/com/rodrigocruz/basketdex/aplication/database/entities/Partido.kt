@@ -7,8 +7,8 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName="tabla_partido")
 data class Partido (
-    @PrimaryKey @ColumnInfo(name="id")
-    var id:Int,
+    @PrimaryKey(autoGenerate = true)
+    var id:Int = 0,
     @ColumnInfo(name = "equipo1")
     val equipo1:String,
     @ColumnInfo(name="equipo2")
