@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".aplication.activities.SetElementsActivity"
+        android:background="#FFF"
+        android:padding="25dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/SeteoNombres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/SeteoDeComplementos"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+    >
+        <TextView
+                android:id="@+id/hintEquipo1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Equipo 1"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/editTextEquipo1"
+                app:layout_constraintRight_toLeftOf="@id/VS"/>
+        <EditText
+                android:layout_marginTop="5dp"
+                android:id="@+id/editTextEquipo1"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:hint="Ingrese el nombre del equipo"
+                android:textSize="10sp"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/hintEquipo1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/VS"/>
+
+
+
+        <TextView
+                android:id="@+id/VS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VS"
+                android:padding="10dp"
+                app:layout_constraintLeft_toRightOf="@id/hintEquipo1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/hintEquipo2"/>
+
+
+
+        <TextView
+                android:id="@+id/hintEquipo2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Equipo 2"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/VS"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/editTextEquipo2"/>
+        <EditText
+                android:layout_marginTop="5dp"
+                android:id="@+id/editTextEquipo2"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:hint="Ingrese el nombre del equipo"
+                android:textSize="10sp"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/hintEquipo2"
+                app:layout_constraintLeft_toRightOf="@id/VS"
+                app:layout_constraintRight_toRightOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/SeteoDeComplementos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/SeteoNombres"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/SeteoDeComplementos2">
+        <TextView
+                android:id="@+id/hintFECHApartido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fecha del partido"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="@id/SeteoDeComplementos"
+                app:layout_constraintLeft_toLeftOf="@id/SeteoDeComplementos"
+                app:layout_constraintRight_toRightOf="@id/SeteoDeComplementos"
+                app:layout_constraintBottom_toTopOf="@id/EditTextFechaPartido"/>
+        <ImageButton
+                android:id="@+id/EditTextFechaPartido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_date_range_black_24dp"
+                app:layout_constraintTop_toBottomOf="@id/hintFECHApartido"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/fechaObtenida"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        <TextView
+                android:id="@+id/fechaObtenida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                app:layout_constraintLeft_toRightOf="@id/EditTextFechaPartido"
+                app:layout_constraintTop_toBottomOf="@id/hintFECHApartido"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/SeteoDeComplementos2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/SeteoDeComplementos"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/SeteoDeComplementos3">
+        <TextView
+                android:id="@+id/hintHORApartido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hora del partido"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="@id/SeteoDeComplementos2"
+                app:layout_constraintLeft_toLeftOf="@id/SeteoDeComplementos2"
+                app:layout_constraintRight_toRightOf="@id/SeteoDeComplementos2"
+                app:layout_constraintBottom_toTopOf="@id/EditTextHoraPartido"/>
+        <ImageButton
+                android:id="@+id/EditTextHoraPartido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_access_time_black_24dp"
+                app:layout_constraintTop_toBottomOf="@id/hintHORApartido"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/horaObtenida"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        <TextView
+                android:id="@+id/horaObtenida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hour"
+                app:layout_constraintLeft_toRightOf="@id/EditTextHoraPartido"
+                app:layout_constraintTop_toBottomOf="@id/hintHORApartido"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/SeteoDeComplementos3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/SeteoDeComplementos2"
+            app:layout_constraintBottom_toTopOf="@id/SeteoDeComplementos4"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+        <TextView
+                android:id="@+id/hintEstadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre del estadio"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/editNombreEstadio"
+        />
+        <EditText
+                android:id="@+id/editNombreEstadio"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:hint="               Ingrese el nombre del estadio               "
+                android:textSize="10sp"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/hintEstadio"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/SeteoDeComplementos4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/SeteoDeComplementos3"
+            app:layout_constraintBottom_toTopOf="@id/backAndNexxt"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+                android:id="@+id/hintReferee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre del Referee"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/editNombreReferee"
+        />
+        <EditText
+                android:id="@+id/editNombreReferee"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:hint="               Ingrese el nombre del referee               "
+                android:textSize="10sp"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/hintReferee"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+            android:id="@+id/backAndNexxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/SeteoDeComplementos4"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:orientation="horizontal"
+            android:gravity="center">
+        <LinearLayout
+                android:id="@+id/btnCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="35dp">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CANCELAR"
+                    android:textColor="#8F8E8E"
+                    android:padding="10dp"/>
+        </LinearLayout>
+        <LinearLayout
+                android:id="@+id/btnAccept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="35dp"
+                >
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="INICIAR PARTIDO"
+                    android:textColor="#FFF"
+                    android:background="#57B33F"
+                    android:padding="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
