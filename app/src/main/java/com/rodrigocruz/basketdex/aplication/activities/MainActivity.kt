@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
 
         if(requestCode==newPartidoActivityRequestCode && resultCode == Activity.RESULT_OK){
             data?.let{
-                val partido = Partido(1,it.getStringExtra(SetElementsActivity.EXTRA_REPLY),it.getStringExtra(SetElementsActivity.EXTRA_REPLY),it.getStringExtra(SetElementsActivity.EXTRA_REPLY),it.getStringExtra(SetElementsActivity.EXTRA_REPLY),it.getStringExtra(SetElementsActivity.EXTRA_REPLY),it.getStringExtra(SetElementsActivity.EXTRA_REPLY),0,0)
+                val partido = Partido(1,it.getStringExtra("team1"),it.getStringExtra("team2"),it.getStringExtra("fecha"),it.getStringExtra("hora"),it.getStringExtra("estadio"),it.getStringExtra("referee"),it.getIntExtra("scoreT1",0),it.getIntExtra("scoreT2",0))
                 partidoViewmodel.insert(partido)
             }
         } else{
